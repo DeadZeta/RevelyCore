@@ -1,0 +1,484 @@
+/* Color palette */
+/* Text styles */
+html {
+  font-size: 10px; }
+  @media (max-width: 992px) {
+    html {
+      font-size: 9px; } }
+  @media (max-width: 768px) {
+    html {
+      font-size: 8px; } }
+
+#sidenav_mobile:not(.active), #sidenav_mobile_bg:not(.active) {
+  display: none; }
+
+body {
+  background-color: #fafafa;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: black; }
+
+.a {
+  color: black;
+  transition: all 0.25s; }
+  .a:hover {
+    color: black;
+    opacity: 0.5;
+    text-decoration: none; }
+a:hover{
+ text-decoration: none;
+}
+
+header {
+  margin-top: 40px;
+  margin-bottom: 80px; }
+  @media (max-width: 992px) {
+    header {
+      margin-top: 20px;
+      margin-bottom: 20px; } }
+  header .menu {
+    position: relative; }
+    @media (max-width: 992px) {
+      header .menu {
+        text-align: right; }
+        header .menu .logo {
+          height: 50px; } }
+    header .menu #sidenav_mobile_toggle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      box-shadow: 0px 5px 12px 0 rgba(217, 217, 217, 0.4);
+      background-color: #ffffff;
+      border: solid 1px #f2f2f2; }
+    header .menu > span a {
+      font-family: Montserrat;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.38;
+      text-align: left;
+      color: #333333;
+      margin-right: 35px; }
+      @media (max-width: 1200px) {
+        header .menu > span a {
+          margin-right: 10px; } }
+  header .btnPlay {
+    height: 50px;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.38;
+    letter-spacing: 1.6px;
+    text-align: left;
+    color: #333333;
+    text-transform: uppercase;
+    border: none;
+    background-color: #ffffff;
+    box-shadow: 0px 5px 12px 0 rgba(217, 217, 217, 0.4);
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.25s;
+    white-space: nowrap; }
+    header .btnPlay div {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 50px;
+      background-color: #2ecc71;
+      box-shadow: 0px 5px 12px 0 rgba(46, 203, 113, 0.4);
+      vertical-align: middle;
+      transition: all 0.25s;
+      }
+    header .btnPlay span {
+      padding: 0 25px; }
+      @media (max-width: 350px) {
+        header .btnPlay span {
+          padding: 0 10px; } 
+      }
+    header .btnPlay:hover {
+      color: #2ecc71; }
+      header .btnPlay:hover div {
+        box-shadow: 0px 5px 12px 0 rgba(230, 58, 58, 0); }
+    @media (max-width: 992px) {
+      header .btnPlay {
+        width: 100%;
+        margin-top: 20px; } 
+    }
+
+footer {
+  margin-top: 5px;
+  margin-bottom: 25px;
+  font-family: Montserrat;
+  font-size: 16px;
+  line-height: 1.38;
+  text-align: left;
+  color: #333333;
+  text-align: center; }
+  footer a {
+    font-weight: 600;
+    color: #2ecc71; }
+
+.block {
+  margin-bottom: 30px;
+  padding: 35px 30px;
+  box-shadow: 0px 5px 12px 0 rgba(217, 217, 217, 0.4);
+  background-color: #ffffff;
+  border: solid 1px #f2f2f2; }
+  @media (max-width: 992px) {
+    .block {
+      padding: 35px 20px; } }
+  .block > h1 {
+    font-family: Montserrat;
+    font-size: 2.8rem;
+    line-height: 0.79;
+    letter-spacing: 2.8px;
+    text-align: left;
+    color: #333333;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 40px; }
+    @media (max-width: 992px) {
+      .block > h1 {
+        margin-left: -25px;
+        margin-right: -25px; } }
+  .block .info {
+    font-family: Montserrat;
+    font-size: 1.6rem;
+    line-height: 1.38;
+    text-align: left;
+    color: #a5a5a5;
+    text-align: center; }
+    .block .info span, .block .info a, .block .info b {
+      color: #2ecc71; }
+    .block .info b {
+      font-weight: 500; }
+  .block .user {
+    display: flex;
+    margin-bottom: 20px; }
+    .block .user > img {
+      margin-right: 15px;
+      width: 60px;
+      height: 60px; }
+    .block .user .name {
+      font-family: Montserrat;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.22;
+      text-align: left;
+      color: #000; }
+    .block .user .info {
+      font-family: Montserrat;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.38;
+      text-align: left;
+      color: #2ecc71; }
+      .color {
+        font-weight: normal;
+        color: #2ecc71; 
+	  }
+    .block .user a {
+      border-bottom: 1px solid #2ecc71; }
+  .block .control {
+    margin-top: 20px;
+    text-align: center; }
+    .block .control a {
+      font-family: Montserrat;
+      font-size: 1.4rem;
+      font-weight: 500;
+      line-height: 1.57;
+      text-align: left;
+      color: #a5a5a5;
+      display: inline-block;
+      width: auto;
+      height: 60px;
+      text-align: center;
+      line-height: 60px;
+      background-color: #ffffff;
+      border: solid 1px #f2f2f2;
+      padding: 0 10px; }
+      .block .control a img {
+        margin: -2px 6px 0; }
+      .block .control a:first-child img {
+        margin-left: 0; }
+      .block .control a:last-child img {
+        margin-right: 0; }
+      @media (min-width: 992px) {
+        .block .control a {
+          width: 160px; }
+          .block .control a:first-child {
+            margin-right: 30px; } }
+
+.donate form {
+  margin: -5px 0 0; }
+  .donate form input, .donate form select {
+    font-family: Montserrat;
+    font-size: 14px;
+    line-height: 1.57;
+    text-align: left;
+    color: #a5a5a5;
+    color: #333333;
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    background-color: #f2f2f2;
+    line-height: 46px;
+    height: 46px;
+    padding: 0 20px; }
+  .donate form select option:not(:disabled) {
+    color: #333333; }
+  .donate form input::-webkit-input-placeholder {
+    color: #a5a5a5; }
+  .donate form input:-ms-input-placeholder {
+    color: #a5a5a5; }
+  .donate form input::-ms-input-placeholder {
+    color: #a5a5a5; }
+  .donate form input::placeholder {
+    color: #a5a5a5; }
+
+.youtubers .YT iframe {
+  width: 100%; }
+
+.comments .text {
+  font-family: Montserrat;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: left;
+  color: #333333; }
+
+.comments .carousel {
+  margin-bottom: 35px; }
+
+.comments .cntrl {
+  width: 60px;
+  height: 60px;
+  background-color: #ffffff;
+  border: solid 1px #f2f2f2;
+  top: 50%; }
+
+.comments .carousel-control-prev {
+  -webkit-transform: translate(-150%, -50%);
+          transform: translate(-150%, -50%); }
+
+.comments .carousel-control-next {
+  -webkit-transform: translate(150%, -50%);
+          transform: translate(150%, -50%); }
+
+.monitoring {
+  background-color: #333333;
+  box-shadow: 0px 5px 12px 0 rgba(217, 217, 217, 0.4);
+  padding-bottom: 20px;
+   }
+  .monitoring > h1 {
+    color: #ffffff; }
+  .monitoring .srv {
+    display: flex;
+    margin-bottom: 20px; }
+    .monitoring .srv .img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      margin-right: 15px;
+      background-color: #2ecc71;
+      box-shadow: 0px 5px 12px 0 rgba(46, 203, 113, 0.4); }
+    .monitoring .srv .ip {
+      font-family: Montserrat;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.22;
+      text-align: left;
+      color: #ffffff;
+      margin-bottom: 2px; }
+    .monitoring .srv .online {
+      font-family: Montserrat;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.38;
+      text-align: left;
+      color: #a5a5a5; }
+      .monitoring .srv .online span {
+        color: #2ecc71; }
+
+.orders .time {
+  font-family: Montserrat;
+  font-size: 14px;
+  line-height: 1.57;
+  text-align: left;
+  color: #a5a5a5; }
+
+.howtostart .list > div {
+  margin-bottom: 40px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.28;
+  text-align: left;
+  color: #333333;
+  display: flex;
+  align-items: center; }
+  .howtostart .list > div span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    min-width: 60px;
+    height: 60px;
+    box-shadow: 0px 5px 12px 0 rgba(46, 203, 113, 0.4);
+    background-color: #2ecc71;
+    font-size: 28px;
+    color: #f2f2f2;
+    margin-right: 20px; }
+
+.howtostart .list img {
+  margin-top: -20px;
+  margin-bottom: 35px;
+  max-width: 100%; }
+  
+.news-btn {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.38;
+    letter-spacing: 1.6px;
+    text-align: left;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 0px 2px 0 rgba(51, 51, 51, 0.1);
+    text-align: center;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 15px;
+    border: none;
+    background-color: #2ecc71;
+    box-shadow: 0px 5px 12px 0 rgba(46, 203, 113, 0.4);
+    transition: all 0.25s;
+    cursor: pointer; }
+.news-btn:hover {
+      box-shadow: 0px 5px 12px 0 rgba(0, 168, 255, 0); }
+.donate {
+      text-align: center;
+}
+
+.form-input {
+	font-family: Montserrat;
+    font-size: 14px;
+    line-height: 1.57;
+    text-align: left;
+    color: #a5a5a5;
+    color: #333333;
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    background-color: #f2f2f2;
+    line-height: 46px;
+    height: 46px;
+    padding: 0 20px;
+    outline:none;
+    }
+.form-btn {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.38;
+    letter-spacing: 1.6px;
+    text-align: left;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 0px 2px 0 rgba(51, 51, 51, 0.1);
+    text-align: center;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 15px;
+    border: none;
+    background-color: #2ecc71;
+    box-shadow: 0px 5px 12px 0 rgba(46, 203, 113, 0.4);
+    transition: all 0.25s;
+    cursor: pointer; }
+.form-btn:hover {
+      box-shadow: 0px 5px 12px 0 rgba(230, 58, 58, 0); 
+}
+.form-a {
+    color: #2ecc71;
+}
+.form-a:hover {
+    color: #f7f1e3;
+}
+
+.mini-profile-btn {
+    font-family: Montserrat;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.38;
+    letter-spacing: 1.6px;
+    text-align: left;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 0px 2px 0 rgba(51, 51, 51, 0.1);
+    text-align: center;
+    width: 240px;
+    height: 40px;
+    margin-bottom: 15px;
+    border: none;
+    background-color: #2ecc71;
+    box-shadow: 0px 5px 12px 0 rgba(46, 203, 113, 0.4);
+    transition: all 0.25s;
+    cursor: pointer;	
+}
+
+.mini-profile-btn:hover {
+	box-shadow: 0px 5px 12px 0 rgba(230, 58, 58, 0);
+}
+
+.launcher{
+          padding: 30px;
+          background: #2ecc71;
+          cursor: pointer;
+          color: white;
+          font-size: 70px;
+          margin: 5px;
+          transition: 0.5s;
+         }
+         .launcher:hover{
+          transform: scale(0.9);
+         }
+
+#sidenav_mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: #333333;
+  padding-top: 100px; }
+  #sidenav_mobile .container {
+    position: absolute;
+    top: 20px; }
+  #sidenav_mobile .close {
+    position: absolute;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0px 5px 12px 0 rgba(217, 217, 217, 0.4);
+    background-color: #f2f2f2;
+    border: solid 1px #f2f2f2;
+    opacity: 1; }
+  #sidenav_mobile a {
+    display: block;
+    font-family: Montserrat;
+    font-size: 32px;
+    line-height: 0.69;
+    text-align: left;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 50px; }
