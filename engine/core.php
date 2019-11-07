@@ -4,7 +4,6 @@ function template($type, $static, $description){
  include("$_SERVER[DOCUMENT_ROOT]/engine/module/head.php");
  include("$_SERVER[DOCUMENT_ROOT]/engine/module/monitoring.php");
  include("$_SERVER[DOCUMENT_ROOT]/engine/module/auth.php");
- include("$_SERVER[DOCUMENT_ROOT]/engine/module/error.php");
  include("$_SERVER[DOCUMENT_ROOT]/engine/settings/config.php");
  include("$_SERVER[DOCUMENT_ROOT]/templates/".$config['template']."/main.php");
 
@@ -41,16 +40,16 @@ function template($type, $static, $description){
 }
 
 //CHECK DB
-include("$_SERVER[DOCUMENT_ROOT]/engine/settings/config.php");
+include("$_SERVER[DOCUMENT_ROOT]/engine/settings/dbconfig.php");
 $mysqli = mysqli_connect($dbconfig['host'], $dbconfig['user'], $dbconfig['password']);
-mysqli_select_db($mysqli, $dbconfig['base']);
- $core_users = mysqli_fetch_assoc(mysqli_query($mysqli, "CHECK TABLE `core_users`"));
- $core_news = mysqli_fetch_assoc(mysqli_query($mysqli, "CHECK TABLE `core_news`"));
+mysqli_select_db($mysqli, $dbconfig['base']) or exit(error("select-base"));
+ $core_users = mysqli_fetch_assoc(mysqli_query($mysqli, "CHECK TABLE `core_users`")) or exit(error("mysql-query"));
+ $core_news = mysqli_fetch_assoc(mysqli_query($mysqli, "CHECK TABLE `core_news`")) or exit(error("mysql-query"));
  if($core_users['Msg_type'] == "Error"){
-  mysqli_query($mysqli, "CREATE TABLE core_users(name TEXT, cash FLOAT, password TEXT, permission TEXT)") or die(mysqli_error($mysqli));
+  mysqli_query($mysqli, "CREATE TABLE core_users(name TEXT, cash FLOAT, password TEXT, permission TEXT)") or exit(error("create-table"));
 }
 if($core_news['Msg_type'] == "Error"){
-  mysqli_query($mysqli, "CREATE TABLE core_news(id FLOAT, new TEXT)") or die(mysqli_error($mysqli));
+  mysqli_query($mysqli, "CREATE TABLE core_news(id FLOAT, new TEXT)") or exit(error("create-table"));
 }
 mysqli_close($mysqli);
 

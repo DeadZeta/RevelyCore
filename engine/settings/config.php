@@ -6,6 +6,7 @@ $config = array(
   "title" => 'RevelyCore',
   "server" => 'inmine.su:19132',
   "admin_mail" => '',
+  "permission" => 'Admin',
   "hash" => 'ripemd128',
   "salt" => 'revelysalt',
   "dev_mode" => 'false',

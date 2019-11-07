@@ -3,18 +3,18 @@
 if(!isset($_COOKIE['rc_user'])){
 $authorization = "
 <h1>Авторизация</h1>
- <form action='/engine/module/ajax/login.php' method='post'>
+ <form method='post'>
  <input name='name' type='text' class='form-input' placeholder='Введите Логин'>
  <input name='password' type='password' class='form-input' placeholder='Введите Пароль'>
- <button class='form-btn' name='go'>Войти</button>
+ <button class='form-btn' name='auth'>Войти</button>
  </form>
 ";
 $mauthorization = "
 <h1>Авторизация</h1>
-<form action='/engine/module/ajax/login.php' method='post'>
+<form method='post'>
  <input name='name' type='text' class='form-input' placeholder='Введите Логин'>
  <input name='password' type='password' class='form-input' placeholder='Введите Пароль'>
- <button class='form-btn' name='go'>Войти</button>
+ <button class='form-btn' name='auth'>Войти</button>
  </form>
  ";
 }else{
