@@ -5,9 +5,6 @@ include("$_SERVER[DOCUMENT_ROOT]/engine/settings/dbconfig.php");
 if(isset($_POST['name']) && isset($_POST['password']) && isset($_POST['auth'])){
  $name = htmlspecialchars_decode($_POST['name']);
  $password = hash($config['hash'], $_POST['password'].$config['salt']);
- if($config['dev_mode'] == 'true'){
-  setcookie("rc_user",$_POST['name'],time()+'604800');
- }else{
  $mysqli = mysqli_connect($dbconfig['host'], $dbconfig['user'], $dbconfig['password']);
   mysqli_select_db($mysqli, $dbconfig['base']);
   $query = mysqli_query($mysqli, "SELECT * FROM `core_users` WHERE `name`='".$name."'") or die(mysqli_error($mysqli));
@@ -27,7 +24,6 @@ if(isset($_POST['name']) && isset($_POST['password']) && isset($_POST['auth'])){
   }else{
   	header("Location: http://".$_SERVER['SERVER_NAME']."/");
   */
- }
  }
 
 ?>

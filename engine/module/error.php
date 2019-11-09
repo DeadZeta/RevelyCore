@@ -1,7 +1,5 @@
 <?php
 
-include("$_SERVER[DOCUMENT_ROOT]/engine/settings/c.php");
-
 function error($type){
  include("$_SERVER[DOCUMENT_ROOT]/engine/settings/config.php");
  $error_main = "

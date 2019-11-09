@@ -1,0 +1,5 @@
+<?php
+
+$admin_index = "";
+
+?>
