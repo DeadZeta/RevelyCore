@@ -19,7 +19,7 @@ if(isset($_POST['config-go'])){
  );
  ?>";
 
- var_dump(file_put_contents("$_SERVER[DOCUMENT_ROOT]/engine/settings/config.php", $saveconfig));
+ file_put_contents("$_SERVER[DOCUMENT_ROOT]/engine/settings/config.php", $saveconfig);
 }
 
 ?>
