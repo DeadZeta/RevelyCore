@@ -1,14 +1,14 @@
 <?php
 
 $config = array(
-  "home" => 'prostoapp.beget.tech',
-  "template" => 'InSite',
+  "home" => '',
+  "template" => '',
   "title" => 'RevelyCore',
-  "server" => 'inmine.su:19132',
+  "server" => '',
   "admin_mail" => '',
-  "permission" => 'Admin',
-  "hash" => 'ripemd128',
-  "salt" => 'revelysalt',
+  "permission" => '',
+  "hash" => '',
+  "salt" => '',
   "dev_mode" => 'false',
   "version" => '2.0',//DONT TOUCH
 );
