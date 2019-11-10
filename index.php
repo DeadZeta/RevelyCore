@@ -26,6 +26,16 @@ if(isset($_GET['do'])){
  	 include("$_SERVER[DOCUMENT_ROOT]/templates/".$config['template']."/rules.php");
  	 template('public', $rules, "Правила");
  	break;
+
+ 	case 'new':
+ 	 include("$_SERVER[DOCUMENT_ROOT]/templates/".$config['template']."/new.php");
+ 	 template('public', $f_news, "Новость");
+ 	break;
+
+ 	case 'cabinet':
+ 	 include("$_SERVER[DOCUMENT_ROOT]/templates/".$config['template']."/cabinet.php");
+ 	 template('private', $cabinet, "Личный Кабинет");
+ 	break;
  	
  	default:
  	 include("$_SERVER[DOCUMENT_ROOT]/templates/".$config['template']."/home.php");

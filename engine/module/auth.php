@@ -20,10 +20,11 @@ $mauthorization = "
 }else{
  $authorization = "
 <h1>Мини-Профиль</h1>
+<a href='/?do=cabinet'><button class='form-btn'>Личный Кабинет</button></a>
 ";
 $mauthorization = "
 <h1>Мини-Профиль</h1>
-
+<a href='/?do=cabinet'><button class='form-btn'>Личный Кабинет</button></a>
 ";
 }
 ?>
