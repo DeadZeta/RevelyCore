@@ -2,6 +2,7 @@
 
 include("$_SERVER[DOCUMENT_ROOT]/engine/settings/config.php");
 
+if(!file_exists("$_SERVER[DOCUMENT_ROOT]/install.php")){
 if($config['home'] == $_SERVER['SERVER_NAME']){
 if($config['dev_mode'] == 'true'){
 ini_set('error_reporting', E_ALL);
@@ -40,5 +41,8 @@ if(isset($_GET['do'])){
 }
 }else{
  header("Location: http://".$config['home']."/");
+}
+}else{
+ echo "<script> location.href='/install.php'; </script>";
 }
 ?>
