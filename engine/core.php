@@ -46,6 +46,7 @@ mysqli_select_db($mysqli, $dbconfig['base']) or exit(error("select-base"));
  $core_users = mysqli_fetch_assoc(mysqli_query($mysqli, "CHECK TABLE `core_users`")) or exit(error("mysql-query"));
  $core_news = mysqli_fetch_assoc(mysqli_query($mysqli, "CHECK TABLE `core_news`")) or exit(error("mysql-query"));
  $core_stats = mysqli_fetch_assoc(mysqli_query($mysqli, "CHECK TABLE `core_statistic`")) or exit(error("mysql-query"));
+ $core_payments = mysqli_fetch_assoc(mysqli_query($mysqli, "CHECK TABLE `core_payments`")) or exit(error("mysql-query"));
  if($core_users['Msg_type'] == "Error"){
   mysqli_query($mysqli, "CREATE TABLE core_users(name TEXT, cash FLOAT, password TEXT, permission TEXT)") or exit(error("create-table"));
 }
@@ -54,6 +55,9 @@ if($core_news['Msg_type'] == "Error"){
 }
 if($core_stats['Msg_type'] == "Error"){
   mysqli_query($mysqli, "CREATE TABLE core_statistic(users FLOAT, balance FLOAT)") or exit(error("create-table"));
+}
+if($core_payments['Msg_type'] == "Error"){
+  mysqli_query($mysqli, "CREATE TABLE core_payments(name TEXT, cash FLOAT, date TEXT, id TEXT)") or exit(error("create-table"));
 }
 
 mysqli_close($mysqli);

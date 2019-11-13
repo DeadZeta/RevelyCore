@@ -1,6 +1,7 @@
 $(document).ready(function() {
-$("#notify").hide();
-$("#mnotify").hide();
+//$("#notify").hide();
+//$("#mnotify").hide();
+$("#pay").hide();
 
  $('#sidenav_mobile_close').click(function() {
   $('#sidenav_mobile').removeClass('active');
@@ -8,6 +9,19 @@ $("#mnotify").hide();
  $('#sidenav_mobile_toggle').click(function() {
   $('#sidenav_mobile').toggleClass('active');
  });
+
+//CABINET
+
+$("#cabinet-btn").on("click", function(){
+  $("#pay").hide();
+  $("#cabinet").show(300);
+});
+
+$("#pay-btn").on("click", function(){
+  $("#cabinet").hide();
+  $("#pay").show(300);
+});
+
 
 /* $("#rcauthbtn").on("click", function(){
   if($('#rcname').length && $('#rcname').val().length && $('#rcpassword').length && $('#rcpassword').val().length){

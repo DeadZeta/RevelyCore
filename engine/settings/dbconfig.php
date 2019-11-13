@@ -1,8 +1,10 @@
 <?php
+
 $dbconfig = array(
-  "host" => '',
-  "user" => '',
-  "password" => '',
-  "base" => ''
+  "host" => 'localhost',
+  "user" => 'prostoapp_test',
+  "password" => 'testdata1122',
+  "base" => 'prostoapp_test'
 );
+
 ?>

@@ -14,6 +14,8 @@ if(isset($_POST['config-go'])){
   'permission' => '".$_POST['config-permission']."',
   'hash' => '".$_POST['config-hash']."',
   'salt' => '".$_POST['config-salt']."',
+  'shop_id' => '".$_POST['config-shop-id']."',
+  'shop_key' => '".$_POST['config-shop-key']."',
   'dev_mode' => '".$_POST['config-dev']."',
   'version' => '2.0',//DONT TOUCH
  );

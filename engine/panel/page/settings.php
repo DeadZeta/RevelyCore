@@ -11,6 +11,8 @@ $admin_settings = "
  <input type='text' class='form-input' name='config-permission' placeholder='Приоритетная Группа'>
  <input type='text' class='form-input' name='config-hash' placeholder='Метод Хеширования Пароля'>
  <input type='text' class='form-input' name='config-salt' placeholder='Секретное Слово'>
+ <input type='text' class='form-input' name='config-shop-id' placeholder='ID Магазина (InterKassa)'>
+ <input type='text' class='form-input' name='config-shop-key' placeholder='Ключ Магазина (InterKassa)'>
  <input type='text' class='form-input' name='config-dev' placeholder='Режим Разработчика (true/false)'>
  <button class='form-btn' name='config-go'>Сохранить</button>
 </form>
