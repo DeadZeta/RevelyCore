@@ -5,6 +5,7 @@ $main = "
 <center>
  <a href='/admin.php?do=settings'><i class='btn-ico fas fa-cogs'></i></a>
  <a href='/admin.php?do=statistic'><i class='btn-ico fas fa-desktop'></i></a>
+ <a href='/admin.php?do=news'><i class='btn-ico fas fa-desktop'></i></a>
 </center>
 </div>
 <div class='body-panel'>

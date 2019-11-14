@@ -1,16 +1,16 @@
 <?php
  $config = array(
- 'home' => 'prostoapp.beget.tech',
-  'template' => 'InSite',
+ 'home' => '',
+  'template' => '',
   'title' => 'Revely Core',
-  'server' => 'inmine.su:19137',
+  'server' => '',
   'admin_mail' => '',
-  'permission' => 'Admin',
-  'hash' => 'ripemd128',
-  'salt' => 'revelysalt',
-  'shop_id' => '5dc1a5171ae1bd10008b4569',
-  'shop_key' => 'D45pGUzse1nI1rSd',
+  'permission' => '',
+  'hash' => '',
+  'salt' => '',
+  'shop_id' => '',
+  'shop_key' => '',
   'dev_mode' => 'false',
-  'version' => '2.0',//DONT TOUCH
+  'version' => '2.3',//DONT TOUCH
  );
  ?>

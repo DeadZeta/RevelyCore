@@ -29,6 +29,14 @@ if(isset($_GET['do'])){
  	 include("$_SERVER[DOCUMENT_ROOT]/engine/panel/page/settings.php");
  	 template('private', $admin_settings, "Настройки");
  	break;
+
+ 	case 'news':
+ 	 if(isset($_POST['create-go']) || isset($_POST['delete-go'])){
+      include("$_SERVER[DOCUMENT_ROOT]/engine/panel/news.php");
+     }
+ 	 include("$_SERVER[DOCUMENT_ROOT]/engine/panel/page/news.php");
+ 	 template('private', $admin_news, "Менеджер Новостей");
+ 	break;
  	
  	default:
  	 include("$_SERVER[DOCUMENT_ROOT]/engine/panel/page/home.php");
