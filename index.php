@@ -22,6 +22,11 @@ if(isset($_GET['do'])){
  	 template('public', $donate, "Донат Услуги");
  	break;
 
+ 	case 'play':
+ 	 include("$_SERVER[DOCUMENT_ROOT]/templates/".$config['template']."/play.php");
+ 	 template('public', $play, "Как Начать Играть?");
+ 	break;
+
  	case 'rules':
  	 include("$_SERVER[DOCUMENT_ROOT]/templates/".$config['template']."/rules.php");
  	 template('public', $rules, "Правила");

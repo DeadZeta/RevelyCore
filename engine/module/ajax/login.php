@@ -12,18 +12,30 @@ if(isset($_POST['name']) && isset($_POST['password']) && isset($_POST['auth'])){
   $result = mysqli_fetch_assoc($query);
   if($result['password'] == $password){
   setcookie("rc_user",$_POST['name'],time()+'604800');
+  header("Location: http://".$config['home']."/");
   }
-  }
-  /* if($config['plugin_auth'] == 'true'){
-   $query = mysqli_query($mysqli, "SELECT * FROM `".$config['plugin_auth_table']."` WHERE `".$config['plugin_auth_user']."`='".$name."'");
-   if($query->num_rows > 0){
-   //Coming soon...
-   }else{
-    header("Location: http://".$_SERVER['SERVER_NAME']."/");
-   }
   }else{
-  	header("Location: http://".$_SERVER['SERVER_NAME']."/");
-  */
+  if($config['plugin_auth'] == 'true'){
+    $other_table = $config['plugin_auth_table'];
+    $other_name = $config['plugin_auth_name'];
+    $other_pass = $config['plugin_auth_password'];
+    $plugin_hash_password = hash($config['hash'], $_POST['password']);
+    if($config['plugin_auth_strtolower'] == 'true'){
+      $name = strtolower($name);
+    }
+   $check_user = mysqli_query($mysqli, "SELECT * FROM `$other_table` WHERE `$other_name`='".$name."'");
+ if($check_user->num_rows > 0){
+  $auth = mysqli_fetch_assoc($check_user);
+  if($auth[$other_name] == $name){
+   if($auth[$other_pass] == $plugin_hash_password){
+     mysqli_query($mysqli, "INSERT INTO `core_users`(`name`, `cash`, `password`, `permission`) VALUES ('".$_POST['name']."','0','".$password."','Игрок')");
+    setcookie("rc_user",$_POST['name'],time()+'604800');
+    header("Location: http://".$config['home']."/");
+   }
+  }
  }
+ }
+ }
+}
 
 ?>

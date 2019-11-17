@@ -10,7 +10,12 @@
   'salt' => '',
   'shop_id' => '',
   'shop_key' => '',
+  'plugin_auth' => 'false',
+  'plugin_auth_table' => '',
+  'plugin_auth_name' => '',
+  'plugin_auth_password' => '',
+  'plugin_auth_strtolower' => 'false',
   'dev_mode' => 'false',
-  'version' => '2.3',//DONT TOUCH
+  'version' => '2.4',//DONT TOUCH
  );
  ?>

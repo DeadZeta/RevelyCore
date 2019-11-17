@@ -6,8 +6,8 @@ $main = "
             <span class='close' id='sidenav_mobile_close'><img src='/templates/".$config['template']."/images/close.svg'></span>
         </div>
         <a href='/'>Покупка доната</a>
-        <a href='/description'>Описание доната</a>
-        <a href='/contacts'>Контакты</a>
+        <a href='/?do=description'>Описание доната</a>
+        <a href='/?do=contacts'>Контакты</a>
         <a href='https://vk.com/inmineru' target='_blank'>Мы ВКонтакте</a>
     </div>
     <header>
@@ -18,10 +18,10 @@ $main = "
                     <a href='/'><img class='logo' src='/templates/".$config['template']."/images/logo.svg'></a>
                     <span class='d-none d-lg-inline d-md-none'>
                         <a class='a' href='https://vk.com/inmineru' target='_blank'>Мы ВКонтакте</a>
-                        <a class='a' href='/description'>Описание доната</a>
-                        <a class='a' href='/contacts'>Контакты</a>
+                        <a class='a' href='/?do=description'>Описание доната</a>
+                        <a class='a' href='/?do=contacts'>Контакты</a>
                     </span>
-                    <a href='/play'><button class='btnPlay d-block'>
+                    <a href='/?do=play'><button class='btnPlay d-block'>
                         <div><img src='/templates/".$config['template']."/images/btn-play.svg'></div>
                         <span>Как начать играть?</span>
                     </button></a>

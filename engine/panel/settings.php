@@ -16,6 +16,11 @@ if(isset($_POST['config-go'])){
   'salt' => '".$_POST['config-salt']."',
   'shop_id' => '".$_POST['config-shop-id']."',
   'shop_key' => '".$_POST['config-shop-key']."',
+  'plugin_auth' => '".$_POST['config-plugin-auth']."',
+  'plugin_auth_table' => '".$_POST['config-plugin-auth-table']."',
+  'plugin_auth_name' => '".$_POST['config-plugin-auth-name']."',
+  'plugin_auth_password' => '".$_POST['config-plugin-auth-password']."',
+  'plugin_auth_strtolower' => '".$_POST['config-plugin-auth-strtolower']."',
   'dev_mode' => '".$_POST['config-dev']."',
   'version' => '2.0',//DONT TOUCH
  );

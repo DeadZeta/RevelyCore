@@ -13,6 +13,11 @@ $admin_settings = "
  <input type='text' class='form-input' name='config-salt' placeholder='Секретное Слово'>
  <input type='text' class='form-input' name='config-shop-id' placeholder='ID Магазина (InterKassa)'>
  <input type='text' class='form-input' name='config-shop-key' placeholder='Ключ Магазина (InterKassa)'>
+ <input type='text' class='form-input' name='config-plugin-auth' placeholder='Режим: Плагин Авторизации (true/false)'>
+ <input type='text' class='form-input' name='config-plugin-auth-table' placeholder='Таблица Авторизации'>
+ <input type='text' class='form-input' name='config-plugin-auth-name' placeholder='Колонка: Ник'>
+ <input type='text' class='form-input' name='config-plugin-auth-password' placeholder='Колонка: Пароль'>
+ <input type='text' class='form-input' name='config-plugin-auth-strtolower' placeholder='Использовать нижний регистр (true/false)'>
  <input type='text' class='form-input' name='config-dev' placeholder='Режим Разработчика (true/false)'>
  <button class='form-btn' name='config-go'>Сохранить</button>
 </form>

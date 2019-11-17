@@ -6,10 +6,6 @@ $mysqli = mysqli_connect($dbconfig['host'], $dbconfig['user'], $dbconfig['passwo
 mysqli_select_db($mysqli, $dbconfig['base']) or exit(error("select-base"));
  $core_users = mysqli_fetch_assoc(mysqli_query($mysqli, "CHECK TABLE `core_users`")) or exit(error("mysql-query"));
  $core_news = mysqli_fetch_assoc(mysqli_query($mysqli, "CHECK TABLE `core_news`")) or exit(error("mysql-query"));
- if(isset($_COOKIE['rc_user'])){
-  $user = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT * FROM `core_users` WHERE `name`='".$_COOKIE['rc_user']."'")) or exit(error("mysql-query"));
- }else{
-  $user['permission']='';}
  $core_stats = mysqli_fetch_assoc(mysqli_query($mysqli, "CHECK TABLE `core_statistic`")) or exit(error("mysql-query"));
  if($core_users['Msg_type'] == "Error"){
   mysqli_query($mysqli, "CREATE TABLE core_users(name TEXT, cash FLOAT, password TEXT, permission TEXT)") or exit(error("create-table"));
@@ -23,6 +19,16 @@ if($core_stats['Msg_type'] == "Error"){
 mysqli_close($mysqli);
 
 function template($type, $static, $description){
+
+include("$_SERVER[DOCUMENT_ROOT]/engine/settings/dbconfig.php");
+$mysqli = mysqli_connect($dbconfig['host'], $dbconfig['user'], $dbconfig['password']);
+mysqli_select_db($mysqli, $dbconfig['base']) or exit(error("select-base"));
+ if(isset($_COOKIE['rc_user'])){
+  $user = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT * FROM `core_users` WHERE `name`='".$_COOKIE['rc_user']."'")) or exit(error("mysql-query"));
+ }else{
+  $user['permission']='';}
+mysqli_close($mysqli);
+
  include("$_SERVER[DOCUMENT_ROOT]/engine/panel/head.php");
  include("$_SERVER[DOCUMENT_ROOT]/engine/module/auth.php");
  include("$_SERVER[DOCUMENT_ROOT]/engine/settings/config.php");
@@ -52,7 +58,11 @@ function template($type, $static, $description){
  	
  	case 'private':
      if(isset($_COOKIE['rc_user'])){
+     if($user['permission'] ==  $config['permission']){
       echo $static;
+     }else{
+      die(error("page-403"));
+     }
      }else{
       if($user['permission'] == $config['permission']){
        echo $static;
