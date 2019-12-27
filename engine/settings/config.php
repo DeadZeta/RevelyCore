@@ -16,6 +16,6 @@
   'plugin_auth_password' => '',
   'plugin_auth_strtolower' => 'false',
   'dev_mode' => 'false',
-  'version' => '2.4',//DONT TOUCH
+  'version' => '2.5',//DONT TOUCH
  );
  ?>
