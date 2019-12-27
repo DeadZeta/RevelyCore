@@ -798,13 +798,15 @@ if(isset($_POST['config-save'])){
   'permission' => '".$_POST['config-permission']."',
   'hash' => '".$_POST['config-hash']."',
   'salt' => '".$_POST['config-salt']."',
+  'shop_id' => '',
+  'shop_key' => '',
   'plugin_auth' => 'false',
   'plugin_auth_table' => '',
   'plugin_auth_name' => '',
   'plugin_auth_password' => '',
   'plugin_auth_strtolower' => 'false',
   'dev_mode' => 'false',
-  'version' => '2.0',//DONT TOUCH
+  'version' => '2.5',//DONT TOUCH
  );
  ?>";
 
