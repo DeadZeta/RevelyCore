@@ -11,6 +11,8 @@ if(isset($_POST['name']) && isset($_POST['password']) && isset($_POST['auth'])){
   if($query->num_rows > 0){
   $result = mysqli_fetch_assoc($query);
   if($result['password'] == $password){
+  $hash = hash("md5", $_POST['name']);
+  setcookie("hash",$hash,time()+604800);
   setcookie("rc_user",$_POST['name'],time()+'604800');
   header("Location: http://".$config['home']."/");
   }
@@ -29,6 +31,8 @@ if(isset($_POST['name']) && isset($_POST['password']) && isset($_POST['auth'])){
   if($auth[$other_name] == $name){
    if($auth[$other_pass] == $plugin_hash_password){
      mysqli_query($mysqli, "INSERT INTO `core_users`(`name`, `cash`, `password`, `permission`) VALUES ('".$_POST['name']."','0','".$password."','Игрок')");
+    $hash = hash("md5", $_POST['name']);
+    setcookie("hash",$hash,time()+604800);
     setcookie("rc_user",$_POST['name'],time()+'604800');
     header("Location: http://".$config['home']."/");
    }

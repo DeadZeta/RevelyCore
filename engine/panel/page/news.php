@@ -10,7 +10,7 @@
  if($query_check->num_rows > 0){
  while($g_new = mysqli_fetch_assoc($query)){
   $get_news.= "
-   ID: ".$g_new['id']." | ".substr($g_new['new'], 0, 150)."<br>
+   ID: ".$g_new['id']." | ".$g_new['title']."<br>
   ";
  }
 }else{
@@ -34,7 +34,7 @@ $admin_news = "
  $get_news
 </div>
 <div class='block' id='news-create' style='height: 1000px;'>
- <form method='post' enctype='multipart/form-data'>
+ <form method='post' enctype='multipart/form-data'> 
   <textarea style='width: 100%;height:700px' name='create-text'></textarea>
   <input type='file' name='img'>
   <button class='form-btn' name='create-go'>Создать</button>

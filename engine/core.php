@@ -31,7 +31,15 @@ function template($type, $static, $description){
  	
  	case 'private':
      if(isset($_COOKIE['rc_user'])){
+      if(isset($_COOKIE['hash'])){
+      if(hash("md5", $_COOKIE['rc_user']) == $_COOKIE['hash']){
       echo $static;
+      }else{
+      echo error("page-403");
+     }
+      }else{
+      echo error("page-403");
+     }
      }else{
       echo error("page-403");
      }
@@ -51,13 +59,13 @@ mysqli_select_db($mysqli, $dbconfig['base']) or exit(error("select-base"));
   mysqli_query($mysqli, "CREATE TABLE core_users(name TEXT, cash FLOAT, password TEXT, permission TEXT)") or exit(error("create-table"));
 }
 if($core_news['Msg_type'] == "Error"){
-  mysqli_query($mysqli, "CREATE TABLE core_news(id FLOAT, new TEXT)") or exit(error("create-table"));
+  mysqli_query($mysqli, "CREATE TABLE core_news(id INT PRIMARY KEY AUTO_INCREMENT, new TEXT, title TEXT)") or exit(error("create-table"));
 }
 if($core_stats['Msg_type'] == "Error"){
   mysqli_query($mysqli, "CREATE TABLE core_statistic(users FLOAT, balance FLOAT)") or exit(error("create-table"));
 }
 if($core_payments['Msg_type'] == "Error"){
-  mysqli_query($mysqli, "CREATE TABLE core_payments(name TEXT, cash FLOAT, date TEXT, id TEXT)") or exit(error("create-table"));
+  mysqli_query($mysqli, "CREATE TABLE core_payments(name TEXT, cash FLOAT, date TEXT, id INT PRIMARY KEY AUTO_INCREMENT)") or exit(error("create-table"));
 }
 
 mysqli_close($mysqli);

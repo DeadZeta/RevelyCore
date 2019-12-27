@@ -58,28 +58,17 @@ mysqli_close($mysqli);
  	
  	case 'private':
      if(isset($_COOKIE['rc_user'])){
-     if($user['permission'] ==  $config['permission']){
+      if(isset($_COOKIE['hash'])){
+      if(hash("md5", $_COOKIE['rc_user']) == $_COOKIE['hash']){
       echo $static;
-     }else{
-      die(error("page-403"));
+      }else{
+      echo error("page-403");
+     }
+      }else{
+      echo error("page-403");
      }
      }else{
-      if($user['permission'] == $config['permission']){
-       echo $static;
-      }else{
-       echo "
- <!DOCTYPE html>
-<html>
-<head>
-  <title>".$config['title']." - Авторизация</title>
-  ".$head."
-</head>
-<body>
- ".$admin_auth."
-</body>
-</html>
- ";
-      }
+      echo error("page-403");
      }
  	break;
  }
